@@ -1,2 +1,2 @@
 # MEandYOU_Website
-Dating website
+Dating website with NextJS, React and Supabase
