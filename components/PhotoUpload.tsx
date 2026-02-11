@@ -1,57 +1,54 @@
 "use client";
 
 import { uploadProfilePhoto } from "@/lib/actions/profile";
-import { useRef, useState} from "react";
-
+import { useRef, useState } from "react";
 
 export default function PhotoUpload({
   onPhotoUploaded,
 }: {
   onPhotoUploaded: (url: string) => void;
 }) {
-    const [uploading, setUploading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
-    const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-    async function handelFileSelect(event: React.ChangeEvent<HTMLInputElement>) {
-        const file = event.target.files?[0];
-        if (!file) return;
-        
-        if (!file.type.stsartWith("image/")) {
-            setError("Please select an image file");
-            return;
-        }
-        if (file.size > 5 * 1024 * 1024) {
-        setError("File size must be less than 5 MB");
-        return;
+  async function handleFileSelect(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      setError("Please select an image file.");
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      setError("File size must be less than 5 MB.");
+      return;
     }
 
     setUploading(true);
     setError(null);
 
-
     try {
-        const result = await uploadProfilePhoto(file);
-        if (result.success && result.url) {
-            onPhotoUploaded(result.url);
-            setError(null);
-        } else {
-            setError(result.error ?? "Failed to upload photo.");
-        }
-
-    } catch (error) {
-        setError("Failed to change photo.");
+      const result = await uploadProfilePhoto(file);
+      if (result.success && result.url) {
+        onPhotoUploaded(result.url);
+        setError(null);
+      } else {
+        setError(result.error ?? "Failed to upload photo.");
+      }
+    } catch (err) {
+      setError("Failed to change photo.");
     } finally {
-        setUploading(false);
+      setUploading(false);
     }
-    }
+  }
 
-    function handleClick() {
-        fileInputRef.current?.click();
-    }
+  function handleClick() {
+    fileInputRef.current?.click();
+  }
 
-
-   return (
+  return (
     <div className="absolute bottom-0 right-0">
       <input
         ref={fileInputRef}
