@@ -1,7 +1,9 @@
 "use client";
 
+import { useAuth } from "@/contexts/auth-context";
 import { createClient } from "@/lib/supabase/client";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function AuthPage() {
   const [isSignUp, setIsSignUp] = useState<boolean>(false);
@@ -10,6 +12,14 @@ export default function AuthPage() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const supabase = createClient();
+  const { user, loading: authLoading } = useAuth();
+  const router = useRouter(); // <--- redirect User to the page
+
+  useEffect(() => {
+    if (user && !authLoading) {
+      router.push("/");
+    }
+  }, [user, authLoading, router]);
 
   async function handleAuth(e: React.FormEvent) {
     e.preventDefault();
@@ -50,8 +60,18 @@ export default function AuthPage() {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2 text-transform: uppercase">
             Welcome to
           </h1>
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            <span className="text-red-900">ME</span> and{" "}
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2 flex items-center space-x-2 justify-center">
+            <span className="text-red-900">ME</span>
+            <div className="relative">
+              <span className="z-10 transition duration-300 ease-in-out hover:opacity-0">
+                and
+              </span>
+              <img
+                className="h-12 w-12 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                src="https://images.icon-icons.com/317/PNG/512/heart-icon_34407.png"
+                alt="heart"
+              />
+            </div>
             <span className="text-red-900">YOU</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
