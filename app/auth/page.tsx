@@ -58,7 +58,7 @@ export default function AuthPage() {
             {isSignUp ? "Create your account" : "Sign in to your account"}
           </p>
         </div>
-        {/* Form Email and Password */}
+        {/*-------------- Form (Email and Password) -------------------*/}
         <form className="space-y-6" onSubmit={handleAuth}>
           <div>
             <label
@@ -95,7 +95,7 @@ export default function AuthPage() {
               placeholder="Enter your password"
             />
           </div>
-          {/* Tracking error case */}
+          {/* -------------------- Tracking error case -------------- */}
           {error && (
             <div className="text-red-600 dark:text-red-400 text-sm">
               {error}
