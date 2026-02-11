@@ -1,5 +1,5 @@
 
-Dating website with NextJS, React and Supabase + Tailwind CSS
+Dating website with NextJS, React and Supabase + Tailwind CSS TypeScript
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -40,5 +40,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 # MEandYOU_Website
 
-Dating website with NextJS, React and Supabase + Tailwind CSS
+Dating website with NextJS, React and Supabase + Tailwind CSS TypeScript
 
