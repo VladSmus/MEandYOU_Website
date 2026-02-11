@@ -4,21 +4,22 @@ import Link from "next/link";
 
 export default function Navbar() {
   const { signOut, user } = useAuth();
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900 border-b border-gray-200/50 dark:border-gray-700/50">
+  return ( 
+    // relative z-50 bg-slate-900 border-b border-gray-200/50 dark:border-gray-700/50
+    <nav className="relative z-50 bg-slate-900 border-b border-gray-200/50 dark:border-gray-700/50">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* ------ LOGO here -------- */}
           <Link
             href="/"
-            className="flex items-center space-x-3 hover:opacity-80 transition duration-200 delay-100"
+            className="flex items-center space-x-3 hover:opacity-70 transition duration-200 delay-100"
           >
             <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent flex items-center justify-between">
               <span className="text-red-900">ME</span>{" "}
               <img
                 className="h-8 w-8"
-                src="https://images.icon-icons.com/1880/PNG/512/iconfinder-love-4341304_120541.png"
-                alt="heart_icon"
+                src="/heart-icon.svg"
+                alt="heart-icon"
               />{" "}
               <span className="text-red-900">YOU</span>
             </span>

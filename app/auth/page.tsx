@@ -68,7 +68,7 @@ export default function AuthPage() {
               </span>
               <img
                 className="h-12 w-12 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-                src="https://images.icon-icons.com/317/PNG/512/heart-icon_34407.png"
+                src="/heart.png"
                 alt="heart"
               />
             </div>

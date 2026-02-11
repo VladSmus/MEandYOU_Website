@@ -1,6 +1,6 @@
 "use server";
 
-import { UserProfile } from "@app/profile/page";
+import { UserProfile } from "@/app/profile/page";
 import { createClient } from "../supabase/server";
 
 export async function getCurrentUserProfile() {
@@ -76,7 +76,7 @@ export async function uploadProfilePhoto(file: File) {
         upsert: false,
     });
 
-    if {error} {
+    if (error) {
         return { success: false, error: error.message};
     }
 
