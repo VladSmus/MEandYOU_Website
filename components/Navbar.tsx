@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const { signOut, user } = useAuth();
-  return ( 
+  return (
     // relative z-50 bg-slate-900 border-b border-gray-200/50 dark:border-gray-700/50
     <nav className="relative z-50 bg-slate-900 border-b border-gray-200/50 dark:border-gray-700/50">
       <div className="container mx-auto px-6">
@@ -16,11 +16,7 @@ export default function Navbar() {
           >
             <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent flex items-center justify-between">
               <span className="text-red-900">ME</span>{" "}
-              <img
-                className="h-8 w-8"
-                src="/heart-icon.svg"
-                alt="heart-icon"
-              />{" "}
+              <img className="h-8 w-8" src="/heart-icon.svg" alt="heart-icon" />{" "}
               <span className="text-red-900">YOU</span>
             </span>
           </Link>
