@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getCurrentUserProfile } from "@/lib/actions/profile";
-// import { calculateAge } from "@/lib/helpers/calculate-age";
+import { calculateAge } from "@/lib/helpers/calculate-age";
 import Link from "next/link";
 
 export interface UserProfile {
@@ -69,22 +69,6 @@ export default function ProfilePage() {
         </div>
       </div>
     );
-  }
-
-  // -------------AGE here calculating --------------
-  function calculateAge(birthdate: string) {
-    const today = new Date();
-    const birthDate = new Date(birthdate);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-
-    if (
-      monthDiff < 0 ||
-      (monthDiff === 0 && today.getDate() < birthDate.getDate())
-    ) {
-      age--;
-    }
-    return age;
   }
 
   if (error || !profile) {
