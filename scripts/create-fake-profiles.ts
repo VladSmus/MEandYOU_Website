@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 // ----- Configuration -------
 const SUPABASE_URL = "https://bvnztdunkjtbbzjzlxrm.supabase.co";
 const SUPABASE_SERVICE_ROLE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2bnp0ZHVua2p0YmJ6anpseHJtIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDcyNDgxNCwiZXhwIjoyMDg2MzAwODE0fQ.lyH7sXBIF0rCCFlNZtNS0u00Pv14E1_WeAE-hL7nq60";
+  "secret key";
 const PASSWORD = "password";
 
 // ----- Intitialize Supabase client with service role key -------
