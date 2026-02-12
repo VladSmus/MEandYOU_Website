@@ -24,14 +24,15 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
   }
 
   const { data: userPrefs, error: prefsError } = await supabase
-    .from("user")
+    .from("users")
     .select("preferences")
     .eq("id", user.id)
     .single();
 
   if (prefsError) {
-    throw new Error("Failed to get user preferences.");
+    throw new Error("Failed to get user preferences");
   }
+
   // <------------------ PREFERENCES -------------->
   const currentUserPrefs = userPrefs.preferences as any;
   const genderPreference = currentUserPrefs?.gender_preference || [];

@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 // ----- Configuration -------
 const SUPABASE_URL = "https://bvnztdunkjtbbzjzlxrm.supabase.co";
 const SUPABASE_SERVICE_ROLE_KEY =
-  "secret key";
+  "secret";
 const PASSWORD = "password";
 
 // ----- Intitialize Supabase client with service role key -------
@@ -22,7 +22,7 @@ const fakeProfiles = [
     birthdate: "1995-03-15",
     bio: "Love hiking, coffee, and good conversations. Looking for someone to explore the world with! 🌍",
     avatar_url:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 50,
@@ -37,7 +37,7 @@ const fakeProfiles = [
     birthdate: "1992-07-22",
     bio: "Passionate about photography and travel. Always up for an adventure! 📸✈️",
     avatar_url:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 28, max: 38 },
       distance: 30,
@@ -52,7 +52,7 @@ const fakeProfiles = [
     birthdate: "1990-11-08",
     bio: "Book lover and yoga enthusiast. Seeking someone who values personal growth and meaningful conversations. 📚🧘‍♀️",
     avatar_url:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 30, max: 40 },
       distance: 25,
@@ -67,7 +67,7 @@ const fakeProfiles = [
     birthdate: "1988-05-12",
     bio: "Tech enthusiast and fitness lover. Looking for someone to share adventures and good food with! 💻🏋️‍♂️",
     avatar_url:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 40,
@@ -82,7 +82,7 @@ const fakeProfiles = [
     birthdate: "1993-09-18",
     bio: "Artist and coffee addict. Love exploring new places and meeting interesting people. 🎨☕",
     avatar_url:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
+      "https://www.rupixel.ru/files/preview/960x1441/104175025062746ztef0cyy56rtvn9cn1smleurcjpqygo9hbiddpz7bkqvoxeoyreiatvh17o1hnmnlfkbhunxdgjq0tnvz1pbc8zr8tpme14r3a.jpg",
     preferences: {
       age_range: { min: 26, max: 36 },
       distance: 35,
@@ -97,7 +97,7 @@ const fakeProfiles = [
     birthdate: "1989-12-03",
     bio: "Musician and outdoor enthusiast. Guitar, hiking, and good vibes only! 🎸🏔️",
     avatar_url:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 24, max: 34 },
       distance: 45,
@@ -112,7 +112,7 @@ const fakeProfiles = [
     birthdate: "1994-02-28",
     bio: "Foodie and travel blogger. Always on the hunt for the best restaurants and hidden gems! 🍕✈️",
     avatar_url:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 27, max: 37 },
       distance: 30,
@@ -127,7 +127,7 @@ const fakeProfiles = [
     birthdate: "1991-06-14",
     bio: "Entrepreneur and fitness coach. Passionate about helping others achieve their goals! 💪🚀",
     avatar_url:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 50,
@@ -142,7 +142,7 @@ const fakeProfiles = [
     birthdate: "1996-08-07",
     bio: "Dance instructor and fitness enthusiast. Love spreading positivity and good energy! 💃✨",
     avatar_url:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 23, max: 33 },
       distance: 25,
@@ -157,7 +157,7 @@ const fakeProfiles = [
     birthdate: "1987-04-25",
     bio: "Software engineer and board game enthusiast. Looking for someone to share nerdy adventures with! 👨‍💻🎲",
     avatar_url:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
     preferences: {
       age_range: { min: 26, max: 36 },
       distance: 40,
@@ -168,7 +168,7 @@ const fakeProfiles = [
   {
     full_name: "Andrey Pashchenko",
     username: "StanAndress",
-    email: "andreyPashencko@example.com",
+    email: "andrey_pashencko@example.com",
     gender: "male" as const,
     birthdate: "2005-09-15",
     bio: "Athlete, weightlifter, powerlifter, electrician. I do watering",
