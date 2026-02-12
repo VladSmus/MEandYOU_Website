@@ -13,8 +13,8 @@ export default function MatchesPage() {
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [ShowMatchNotification, setShowMatchNotification] = useState(false);
-  const [mathedUser, setMatchedUser] = useState<UserProfile | null>(null);
+  const [showMatchNotification, setShowMatchNotification] = useState(false);
+  const [matchedUser, setMatchedUser] = useState<UserProfile | null>(null);
 
   const router = useRouter();
 
@@ -40,7 +40,7 @@ export default function MatchesPage() {
       try {
         const result = await likeUser(likedUser.id);
 
-        if (result.isMatched) {
+        if (result.isMatch) {
           setMatchedUser(result.matchedUser!);
           setShowMatchNotification(true);
         }

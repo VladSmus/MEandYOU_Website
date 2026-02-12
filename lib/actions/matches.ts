@@ -32,7 +32,7 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
   if (prefsError) {
     throw new Error("Failed to get user preferences.");
   }
-// <------------------ PREFERENCES -------------->
+  // <------------------ PREFERENCES -------------->
   const currentUserPrefs = userPrefs.preferences as any;
   const genderPreference = currentUserPrefs?.gender_preference || [];
   const filteredMatches =
@@ -64,6 +64,7 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
       })) || [];
   return filteredMatches;
 }
+// ------------------- LIKE USER here -----------------------------
 
 export async function likeUser(toUserId: string) {
   const supabase = await createClient();
