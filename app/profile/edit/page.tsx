@@ -32,7 +32,7 @@ export default function EditProfilePage() {
             full_name: profileData.full_name || "",
             username: profileData.username || "",
             bio: profileData.bio || "",
-            gender: profileData.gender || "male",
+            gender: profileData.gender || "other",
             birthdate: profileData.birthdate || "",
             avatar_url: profileData.avatar_url || "",
           });
@@ -110,7 +110,7 @@ export default function EditProfilePage() {
             onSubmit={handleFormSubmit}
           >
             <div className="mb-8">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">
+              <label className="block text-xl font-medium text-gray-700 dark:text-gray-300 mb-4">
                 Profile Picture
               </label>
               <div className="flex items-center space-x-6">
@@ -118,7 +118,7 @@ export default function EditProfilePage() {
                   <div className="w-24 h-24 rounded-full overflow-hidden">
                     <img
                       src={formData.avatar_url || "/default-avatar.jpg"}
-                      alt="Profile"
+                      alt="Profile-photo"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -133,11 +133,11 @@ export default function EditProfilePage() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  <p className="text-md text-gray-600 dark:text-gray-400 mb-2">
                     Upload a new profile picture
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-500">
-                    JPG, PNG or GIF. Max 5MB.
+                    jpg, png or gif with a max size of 5 MB
                   </p>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function EditProfilePage() {
                 placeholder="Tell others about yourself..."
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {formData.bio.length}/500 characters
+                {formData.bio.length} / 500 characters
               </p>
             </div>
 

@@ -225,9 +225,9 @@ export default function ProfilePage() {
                     className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
                         <svg
-                          className="w-4 h-4 text-white"
+                          className="w-6 h-6 text-white"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -266,9 +266,9 @@ export default function ProfilePage() {
                   Account
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-700">
+                  <div className="flex items-center justify-start p-3 rounded-lg bg-gray-50 dark:bg-gray-700">
                     <span className="text-gray-900 dark:text-white">
-                      Username
+                      Username:
                     </span>
                     <span className="text-gray-500 dark:text-gray-400">
                       @{profile.username}

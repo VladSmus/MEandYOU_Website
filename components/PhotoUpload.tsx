@@ -65,10 +65,10 @@ export default function PhotoUpload({
         title="Change photo"
       >
         {uploading ? (
-          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
         ) : (
           <svg
-            className="w-4 h-4"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
