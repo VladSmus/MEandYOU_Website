@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { faker } from "@faker-js/faker";
-import "dotenv/config";
+// import "dotenv/config";
 
 // ----- Configuration -------
 const SUPABASE_URL = "https://bvnztdunkjtbbzjzlxrm.supabase.co";
@@ -21,7 +21,8 @@ const fakeProfiles = [
     gender: "female" as const,
     birthdate: "1995-03-15",
     bio: "Love hiking, coffee, and good conversations. Looking for someone to explore the world with! 🌍",
-    avatar_url: " ",
+    avatar_url:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 50,
