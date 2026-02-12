@@ -8,8 +8,8 @@ export default function MatchCard({ user }: { user: UserProfile }) {
       <div className="card-swipe aspect-[3/4] overflow-hidden">
         <div className="relative w-full h-full">
           <Image
-            src={user.avatar_url}
-            alt={user.full_name}
+            src={user.avatar_url} 
+            alt={user.full_name} 
             fill
             className={`object-cover transition-opacity duration-300`}
             priority
