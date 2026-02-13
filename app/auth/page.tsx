@@ -61,18 +61,18 @@ export default function AuthPage() {
             Welcome to
           </h1>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2 flex items-center space-x-2 justify-center">
-            <span className="text-red-900">ME</span>
+            <span className="text-red-900 text-6xl">ME</span>
             <div className="relative">
               <span className="z-10 transition duration-300 ease-in-out hover:opacity-0">
                 and
               </span>
               <img
-                className="h-12 w-12 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                className="h-16 w-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition duration-300 ease-in-out hover:opacity-100"
                 src="/heart.png"
                 alt="heart"
               />
             </div>
-            <span className="text-red-900">YOU</span>
+            <span className="text-red-900 text-6xl">YOU</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
             {isSignUp ? "Create your account" : "Sign in to your account"}
