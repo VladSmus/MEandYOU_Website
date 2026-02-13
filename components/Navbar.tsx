@@ -14,7 +14,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center space-x-3 hover:opacity-70 transition duration-200 delay-100"
           >
-            <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent flex items-center justify-between">
+            <span className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent flex items-center justify-between">
               <span className="text-red-900">ME</span>{" "}
               <img className="h-8 w-8" src="/heart-icon.svg" alt="heart-icon" />{" "}
               <span className="text-red-900">YOU</span>
@@ -23,7 +23,7 @@ export default function Navbar() {
 
           {/*---- Only show navigation links if user is authenticated -----*/}
           {user && (
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden text-lg md:flex items-center space-x-8">
               <Link
                 href="/matches"
                 className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-300 font-medium transition-colors duration-200"
@@ -54,10 +54,10 @@ export default function Navbar() {
           {user ? (
             <button
               onClick={signOut}
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg"
+              className="inline-flex text-lg items-center px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               <svg
-                className="w-4 h-4 mr-1"
+                className="w-6 h-6 mr-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/auth"
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-medium rounded-lg hover:from-pink-600 hover:to-red-600 transition-all duration-200 shadow-md hover:shadow-lg"
+              className="inline-flex text-lg items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-medium rounded-lg hover:from-pink-600 hover:to-red-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Sign In
             </Link>

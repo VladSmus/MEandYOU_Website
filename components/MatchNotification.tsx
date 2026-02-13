@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { UserProfile } from "@/app/profile/page";
+import { useEffect, useState } from "react";
 
 interface MatchNotificationProps {
   match: UserProfile;
@@ -32,6 +32,7 @@ export default function MatchNotification({
     onStartChat();
     handleClose();
   }
+
   return (
     <div
       className={`fixed top-4 right-4 z-50 transition-all duration-300 ${
@@ -42,7 +43,7 @@ export default function MatchNotification({
         <div className="flex items-start space-x-4">
           <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
             <img
-              src={match.avatar_url}
+              src={match.avatar_url || "default-avatar.jpg"}
               alt={match.full_name}
               className="w-full h-full object-cover"
             />
@@ -58,7 +59,7 @@ export default function MatchNotification({
                 className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -79,13 +80,13 @@ export default function MatchNotification({
             <div className="flex space-x-2">
               <button
                 onClick={handleStartChat}
-                className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-semibold py-2 px-4 rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-200"
+                className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 text-white text-md font-semibold py-3 px-6 rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-200"
               >
                 Start Chat
               </button>
               <button
                 onClick={handleClose}
-                className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold py-2 px-4 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-200"
+                className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-md font-semibold py-3 px-4 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-200"
               >
                 Later
               </button>

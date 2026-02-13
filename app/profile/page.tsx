@@ -63,8 +63,8 @@ export default function ProfilePage() {
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-red-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">
-            Loading your profile...
+          <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
+            Loading profile...
           </p>
         </div>
       </div>
@@ -75,18 +75,18 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-red-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-8">
-          <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-4xl">❌</span>
+          <div className="w-30 h-30 bg-gradient-to-r from-red-300 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span className="text-6xl ">❌</span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Profile not found
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
             {error || "Unable to load your profile. Please try again."}
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold py-3 px-6 rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-200"
+            className="bg-gradient-to-r text-xl from-pink-500 to-red-500 text-white font-semibold py-4 px-12 rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-200"
           >
             Retry
           </button>
@@ -99,7 +99,7 @@ export default function ProfilePage() {
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-8">
         <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
             My Profile
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
@@ -200,7 +200,7 @@ export default function ProfilePage() {
 
             <div className="space-y-6">
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   Quick Actions
                 </h3>
                 <div className="space-y-3">
@@ -209,9 +209,9 @@ export default function ProfilePage() {
                     className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
                         <svg
-                          className="w-6 h-6 text-white"
+                          className="w-8 h-8 text-white"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -224,12 +224,12 @@ export default function ProfilePage() {
                           />
                         </svg>
                       </div>
-                      <span className="text-gray-900 dark:text-white">
+                      <span className="text-lg text-gray-900 dark:text-white">
                         Edit Profile
                       </span>
                     </div>
                     <svg
-                      className="w-5 h-5 text-gray-400"
+                      className="w-6 h-6 text-gray-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -246,7 +246,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   Account
                 </h3>
                 <div className="space-y-3">

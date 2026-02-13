@@ -22,7 +22,7 @@ const fakeProfiles = [
     birthdate: "1995-03-15",
     bio: "Love hiking, coffee, and good conversations. Looking for someone to explore the world with! 🌍",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x1441/1041750251667skxygfia3zxbp7rlcoisnp2wja3czbhvoxzthri9fyomwigjhgfdoxemjoupeial6cvxgen6in2iqa1stezipzcw4d9oncqwmoqo.jpg",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 50,
@@ -37,7 +37,7 @@ const fakeProfiles = [
     birthdate: "1992-07-22",
     bio: "Passionate about photography and travel. Always up for an adventure! 📸✈️",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x1441/10417507013100qq6fh992m0aisbxumgneesqybionraxtnfcxxauw9zjgzib8tkqdkjqi5wuyxfsatcv1bnfgz0ubloxwxxyk9ztevhox5sai3fk.jpg",
     preferences: {
       age_range: { min: 28, max: 38 },
       distance: 30,
@@ -52,7 +52,7 @@ const fakeProfiles = [
     birthdate: "1990-11-08",
     bio: "Book lover and yoga enthusiast. Seeking someone who values personal growth and meaningful conversations. 📚🧘‍♀️",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x960/1041750249997t1141zvwov3f7rwkl6y56wgrjbcobkl3zjeyhtheylc99i2gqf3ksf4rohvqwsyaofx8skmswp7qk6frc6do8nhmzmqa42hqtict.jpg",
     preferences: {
       age_range: { min: 30, max: 40 },
       distance: 25,
@@ -67,7 +67,7 @@ const fakeProfiles = [
     birthdate: "1988-05-12",
     bio: "Tech enthusiast and fitness lover. Looking for someone to share adventures and good food with! 💻🏋️‍♂️",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x1441/1041750250316vrc46cj0utrivdugixvudvm2aqeu1oyyznfskz2aqkprkwbrwa5iiifcyoq8gilicoszo4pbhgehbdpsiytmbvfrd6dmx1vxics0.jpg",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 40,
@@ -97,7 +97,7 @@ const fakeProfiles = [
     birthdate: "1989-12-03",
     bio: "Musician and outdoor enthusiast. Guitar, hiking, and good vibes only! 🎸🏔️",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/1280x853/21694751002gzurg5jm9cn1mxsjzxf08ro2y9htblmdjfo4v2juxrtipadpfoa0wfsssl6ndrtilbl3q1mqiatgt8cuhxdhsrdxr38b7erp5eaj.jpg",
     preferences: {
       age_range: { min: 24, max: 34 },
       distance: 45,
@@ -112,7 +112,7 @@ const fakeProfiles = [
     birthdate: "1994-02-28",
     bio: "Foodie and travel blogger. Always on the hunt for the best restaurants and hidden gems! 🍕✈️",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/961x1442/21724309808uevpdo5lvktdz56vnpqmvnvsbxt4t6drbt3q4paolnslziawj5q1veppvrytv8g02nnqvxgnqz0ywr6wbrzfujajlzjejkes2q1m.jpg",
     preferences: {
       age_range: { min: 27, max: 37 },
       distance: 30,
@@ -127,7 +127,7 @@ const fakeProfiles = [
     birthdate: "1991-06-14",
     bio: "Entrepreneur and fitness coach. Passionate about helping others achieve their goals! 💪🚀",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x1449/21694750905y7gqtq7byzi5nfsdkzto9j8n8zyzpssautozcybigfjuu28dncfukjuvrlxjkpvdvgiih7zwqbjnqhysqcdvkq46cnf2cfaqb1ji.jpg",
     preferences: {
       age_range: { min: 25, max: 35 },
       distance: 50,
@@ -142,7 +142,7 @@ const fakeProfiles = [
     birthdate: "1996-08-07",
     bio: "Dance instructor and fitness enthusiast. Love spreading positivity and good energy! 💃✨",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x1440/10061719031696byz2lgnng52zorpf8batxp29jfqn5nkg1oyvxiuwbzpkqkxs0ibs5jwntgph9bgpth9phxmtzydf4nsyutfzyw0qqdczqp6wdxw9.jpg",
     preferences: {
       age_range: { min: 23, max: 33 },
       distance: 25,
@@ -157,7 +157,7 @@ const fakeProfiles = [
     birthdate: "1987-04-25",
     bio: "Software engineer and board game enthusiast. Looking for someone to share nerdy adventures with! 👨‍💻🎲",
     avatar_url:
-      "https://ru.freepik.com/free-photo/young-beautiful-woman-wearing-coat-walking-city_14492292.htm#fromView=search&page=1&position=9&uuid=dce4faf6-cba0-47d3-a10e-bf16aa7e9180&query=%D0%B4%D0%B5%D0%B2%D1%88%D1%83%D0%BA%D0%B0",
+      "https://www.rupixel.ru/files/preview/960x1308/216947506481s74f5dyctys3tbgdicehcln4c1hwmpjihffipcuhl3duiyo0yyqrqlo17s3in7ak5ciwjtm77dcyhykd0uu2f8y2z9kvuengcjp.jpg",
     preferences: {
       age_range: { min: 26, max: 36 },
       distance: 40,

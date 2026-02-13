@@ -7,15 +7,15 @@ export default function MatchCard({ user }: { user: UserProfile }) {
     <div className="relative w-full max-w-sm mx-auto">
       <div className="card-swipe aspect-[3/4] overflow-hidden">
         <div className="relative w-full h-full">
-          <Image
-            src={user.avatar_url} 
+          <Image 
+            src={user.avatar_url || "/default-avatar.jpg"  }
             alt={user.full_name} 
             fill
             className={`object-cover transition-opacity duration-300`}
             priority
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <div className="flex items-end justify-between">

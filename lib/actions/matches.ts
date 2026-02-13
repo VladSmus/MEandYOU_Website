@@ -20,7 +20,7 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
     .limit(50);
 
   if (error) {
-    throw new Error("Failed to fetch potential matches.");
+    throw new Error("Failed to fetch potential matches");
   }
 
   const { data: userPrefs, error: prefsError } = await supabase
@@ -33,7 +33,6 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
     throw new Error("Failed to get user preferences");
   }
 
-  // <------------------ PREFERENCES -------------->
   const currentUserPrefs = userPrefs.preferences as any;
   const genderPreference = currentUserPrefs?.gender_preference || [];
   const filteredMatches =
@@ -65,7 +64,6 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
       })) || [];
   return filteredMatches;
 }
-// ------------------- LIKE USER here -----------------------------
 
 export async function likeUser(toUserId: string) {
   const supabase = await createClient();
@@ -82,9 +80,9 @@ export async function likeUser(toUserId: string) {
     to_user_id: toUserId,
   });
 
-  if (likeError) {
-    throw new Error('Failed to create "like".');
-  }
+  // if (likeError) {
+  //   throw new Error("Failed to create like");
+  // }
 
   const { data: existingLike, error: checkError } = await supabase
     .from("likes")
@@ -94,19 +92,19 @@ export async function likeUser(toUserId: string) {
     .single();
 
   if (checkError && checkError.code !== "PGRST116") {
-    throw new Error("Failed to check for match.");
+    throw new Error("Failed to check for match");
   }
 
   if (existingLike) {
     const { data: matchedUser, error: userError } = await supabase
-      .from("user")
+      .from("users")
       .select("*")
       .eq("id", toUserId)
       .single();
 
-    if (userError) {
-      throw new Error("Failed to fetch matched user.");
-    }
+    // if (userError) {
+    //   throw new Error("Failed to fetch matched user");
+    // }
 
     return {
       success: true,
@@ -135,14 +133,14 @@ export async function getUserMatches() {
     .eq("is_active", true);
 
   if (error) {
-    throw new Error("Failed to fetch matches.");
+    throw new Error("Failed to fetch matches");
   }
 
   const matchedUsers: UserProfile[] = [];
 
   for (const match of matches || []) {
     const otherUserId =
-      match.user1_id == user.id ? match.user2_id : match.user1_id;
+      match.user1_id === user.id ? match.user2_id : match.user1_id;
 
     const { data: otherUser, error: userError } = await supabase
       .from("users")
@@ -170,7 +168,7 @@ export async function getUserMatches() {
       is_verified: true,
       is_online: false,
       created_at: match.created_at,
-      updated_at: match.updated_at,
+      updated_at: match.created_at,
     });
   }
 
