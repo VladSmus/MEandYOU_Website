@@ -102,5 +102,18 @@ export async function createOrGetChannel(otherUserId: string) {
         image: otherUserId.avatar_url || undefined,
     });
 
-    awa
+    try {
+        await channel.create();
+        console.log("Channel created successfully:",channelId);
+    } catch (error) {
+        console.log("Channel creation error:", error);
+
+        if (error instanceof Error && !error.message.includes("already exists")) {
+            throw error;
+        }
+    }
+
+    return {
+        
+    }
 } 
