@@ -74,4 +74,33 @@ export async function createOrGetChannel(otherUserId: string) {
         hash = (hash << 5) - hash + char;
         hash = hash & hash; // <----- Convert to 32-bit integer
     }
-}
+
+    const channelId = `match_${Math.abs(hash).toString(36)}`;
+
+    const serverClient = StreamChat.getInstance(
+        process.env.NEXT_PUBLIC_STREAM_API_KEY!,
+        process.env.STREAM_API_SECRET!
+    );
+
+    const { data: otherUserData, error: otherUserError} = await supabase.from("users").select("full_name, avatar_url").eq("id",otherUserId).single();
+
+    if (otherUserError){
+        console.error("Error fetching user data:", otherUserError);
+        throw new Error("Failed to fetch user data.");
+
+    }
+
+    const channel = serverClient.channel("messaging", channelId, {
+        members: [user.id, otherUserId],
+        created_by_id: user.id,
+    });
+
+
+    await serverClient.upsertUser({
+        id: otherUserId,
+        name: otherUserId.full_name,
+        image: otherUserId.avatar_url || undefined,
+    });
+
+    awa
+} 
