@@ -14,7 +14,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center space-x-3 hover:opacity-70 transition duration-200 delay-100"
           >
-            <span className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent flex items-center justify-between">
+            <span className="text-4xl hover:shadow-xl transition-all duration-200 hover:scale-105 font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent flex items-center justify-between">
               <span className="text-red-900">ME</span>{" "}
               <img className="h-8 w-8" src="/heart-icon.svg" alt="heart-icon" />{" "}
               <span className="text-red-900">YOU</span>
