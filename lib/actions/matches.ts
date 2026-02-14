@@ -20,7 +20,7 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
     .limit(50);
 
   if (error) {
-    throw new Error("Failed to fetch potential matches");
+    throw new Error("failed to fetch potential matches");
   }
 
   const { data: userPrefs, error: prefsError } = await supabase

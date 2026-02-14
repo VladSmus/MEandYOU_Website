@@ -14,7 +14,7 @@ import {
 } from "react";
 import { Channel, Event, StreamChat } from "stream-chat";
 import { text } from "stream/consumers";
-// import VideoCall from "./VideoCall";
+import VideoCall from "./VideoCall";
 
 interface Message {
   id: string;
@@ -141,7 +141,7 @@ export default function StreamChatInterface({
 
               if (customData.caller_id !== userId) {
                 setIncomingCallId(customData.call_id);
-                setCallerName(customData.caller_name || "Someone");
+                setCallerName(customData.caller_name || "Unknown");
                 setIncomingCall(true);
               }
               return;
@@ -212,7 +212,7 @@ export default function StreamChatInterface({
           text: `📹 Video call invitation`,
           call_id: callId,
           caller_id: currentUserId,
-          caller_name: otherUser.full_name || "Someone",
+          caller_name: otherUser.full_name || "Unknown",
         };
 
         await channel.sendMessage(messageData);
@@ -291,8 +291,8 @@ export default function StreamChatInterface({
     return (
       <div className="flex-1 flex items-center justify-center bg-white dark:bg-gray-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">
+          <div className="animate-spin rounded-full h-20 w-20 border-b-2 border-pink-500 mx-auto"></div>
+          <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
             Setting up chat...
           </p>
         </div>
@@ -462,14 +462,14 @@ export default function StreamChatInterface({
         </div>
       )}
 
-      {/* {showVideoCall && videoCallId && (
-        // <VideoCall
-        //   onCallEnd={handleCallEnd}
-        //   callId={videoCallId}
-        //   isIncoming={!isCallInitiator}
-        // />
+      {showVideoCall && videoCallId && (
+        <VideoCall
+          onCallEnd={handleCallEnd}
+          callId={videoCallId}
+          isIncoming={!isCallInitiator}
+        />
       )
-      } */}
+      }
     </div>
   );
 }

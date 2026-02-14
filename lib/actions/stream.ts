@@ -2,6 +2,9 @@
 
 import { StreamChat } from "stream-chat";
 import { createClient } from "../supabase/server";
+import axios from 'axios';
+axios.defaults.timeout = 5000
+
 
 export async function getStreamUserToken() {
   const supabase = await createClient();
@@ -112,7 +115,8 @@ export async function createOrGetChannel(otherUserId: string) {
   try {
     await channel.create();
     console.log("Channel created successfully:", channelId);
-  } catch (error) {
+  } 
+  catch (error) {
     console.log("Channel creation error:", error);
 
     if (error instanceof Error && !error.message.includes("already exists")) {
