@@ -344,14 +344,111 @@ export default function StreamChatInterface({
 
 
         {showScrollButton && (
-            <div className="">
-                <button>
-                    <svg>
-                        <path/>
+            <div className="absolute bottom-20 right-6 z-10">
+                <button 
+                onClick={scrollToBottom}
+                className="bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                title="Scroll to bottom">
+                    <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                        <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                     </svg>
                 </button>
             </div>
         )}
+
+        {/* --- Message Input ------ */}
+
+
+        <div className="border-t border-gray-200 dark:border-gray-700 p-4">
+            <form className="flex space-x-2" onSubmit={handleSendMessage}>
+                <input type="text"
+                value={newMessage}
+                onChange={(e) => {
+                    setNewMessage(e.target.value);
+
+                    if (channel && e.target.value.length > 0) {
+                        channel.keystroke();
+                    }
+                }}
+                
+                onFocus={(e) => {
+                    if (channel) {
+                        channel.keystroke();
+                    }
+                }}
+                placeholder="Type a message..."
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                disabled={!channel}/>
+                <button type="submit"
+                disabled={!newMessage.trim() || !channel}
+                className="px-6 py-2 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200">
+                    <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 12h14m-7-7l7 7-7 7"
+              />
+            </svg>
+                </button>
+            </form>
+        </div>
+
+
+        {showIncomingCall && (
+            <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+                <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-sm mx-4 shadow-2xl">
+                    <div className="text-center">
+                        <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-pink-500">
+                            <img src={otherUser.avatar_url || "/default-avatar.jpg"} alt={otherUser.full_name} 
+                            className="w-full h-full object-cover"/>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                            Incoming Video Call
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 mb-6">
+                            {callerName} is calling you
+                        </p>
+                        <div className="flex space-x-4">
+                            <button
+                            onClick={handleDeclineCall}
+                            className="flex-1 bg-red-500 text-white py-3 px-6 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200">
+                                Decline
+                            </button>
+                            <button
+                            onClick={handleAcceptCall}
+                            className="flex-1 bg-green-500 text-white py-3 px-6 rounded-full font-semibold hover:bg-green-600 transition-colors duration-200">
+                                Accept
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        {showVideoCall && videoCallId (
+            <VideoCall onCallEnd={handleCallEnd}
+            callId={videoCallId}
+            isIncoming={!isCallInititor} />
+        )}
+
+
+
+
+
       </div>
     </div>
   );
