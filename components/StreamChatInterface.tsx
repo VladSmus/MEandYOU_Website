@@ -144,20 +144,100 @@ export default function StreamChatInterface({
 
                         if ( event.message.user?.id !== userId) {
                             const newMsg: Message = {
-                                id:
-                                text:
-                                sender:
-                                timestamp:
-                                user_id:
+                                id: event.message.id,
+                                text: event.message.text || "",
+                                sender: "other",
+                                timestamp: new Date(event.message.created_at || new Date()),
+                                user_id: event.message.user?.id || "",
                             };
 
 
-                            setMessages((prev))
+                            setMessages((prev) => {
+                                const messageExists = prev.some((msg) => msg.id === newMsg.id);
+                                if (!messageExists) {
+                                    return [...prev, newMsg];
+                                }
+
+                                return prev;
+                            });
                         }
                     }
-                })
-            } 
+                });
+
+
+                chatChannel.on("typing.start", (event:Event) => {
+                    if (event.user?.id !== userId) {
+                        setIsTyping(true);
+                    }
+                });
+
+
+                chatChannel.on("typing.stop", (event: Event) => {
+                    if (event.user?.id !== userId) {
+                        setIsTyping(false);
+                    }
+                });
+
+                setClient(chatClient);
+                setChannel(chatChannel);
+
+            }  catch (errro) {
+                router.push("/chat");
+            } finally {
+                setLoading(false);
+            }
         }
-    })
+
+
+        if (otherUser) {
+            initializeChat();
+        }
+
+
+        return () => {
+            if (client) {
+                client.disconnectUser();
+            }
+        };
+    }, [otherUser]);
+
+    async function handleVideoCall() {
+        try {
+            const {callId} = await createVideoCall(otherUser.id);
+            setVideoCallId(callId!);
+            setShowVideoCall(true);
+            setIsCallInitiator(true);
+
+
+            if (channel) {
+                const messageData = {
+                    text:`📹 Video call invitation`,
+                    call_id: callId,
+                    caller_id: currentUserId,
+                    caller_name: otherUser.full_name || "Unknown",
+                };
+                await channel.sendMessage(messageData);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+    useImperativeHandle(ref, () => ({
+        handleVideoCall,
+    }));
+
+
+    async function handleSendMessage(e: React.FormEvent) {
+        e.preventDefault();
+        if (newMessage.trim() && channel) {
+            try {
+
+            } catch (error) {
+                console.error("Error sending message:", error);
+            }
+        }
+    }
 
 }
