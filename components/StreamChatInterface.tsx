@@ -90,7 +90,72 @@ export default function StreamChatInterface({
                 await getStreamUserToken();
                 setCurrentUserId(userId!);
 
-                
+                const chatClient = StreamChat.getInstance(
+                    process.env.NEXT_PUBLIC_STREAM_API_KEY!
+                );
+
+                await chatClient.connectUser(
+                    {
+                        id: userId!,
+                        name: userName,
+                        image: userImage,
+                    }, token
+                );
+
+
+
+                const { channelType, channelId} = await createOrGetChannel(
+                    otherUser.id
+                );
+
+                // ------- Get the channel --------
+                const chatChannel = chatClient.channel(channelType!, channelId);
+                await chatChannel.watch();
+
+                // ----- Load existing messages -------
+                const state = await chatChannel.query({message: {limit: 250}});
+
+
+                // ----- Convert stream messages to our format
+                const convertedMessages:Message[] = state.messages.map((msg) => ({
+                    id: msg.id,
+                    text: msg.text || "",
+                    sender: msg.user?.id === userId ? "me" : "other",
+                    timestamp: new Date(msg.created_at || new Date()),
+                    user_id: msg.user?.id || "",
+                }));
+
+
+                setMessages(convertedMessages);
+
+                chatChannel.on("message.new", (event: Event) => {
+                    if (event.message) {
+                        if (event.message.text?.includes(`📹 Video call invitation.`)) {
+                            const customData = event.message as any;
+
+                            if ( customData.caller_id !== userId) {
+                                setIncomingCallId(customData.call_id);
+                                setCallerName(customData.caller_name || "Unknown");
+                                setIncomingCall(true);
+                            }
+                            return ;
+                        }
+
+
+                        if ( event.message.user?.id !== userId) {
+                            const newMsg: Message = {
+                                id:
+                                text:
+                                sender:
+                                timestamp:
+                                user_id:
+                            };
+
+
+                            setMessages((prev))
+                        }
+                    }
+                })
             } 
         }
     })
