@@ -16,7 +16,7 @@ export default function ChatConversationPage() {
   const { user } = useAuth();
   const userId = params.userId as string;
 
-  const chatInterface = useRef<{ handleVideoCall: () => void } | null>(null);
+  const chatInterfaceRef = useRef<{ handleVideoCall: () => void } | null>(null);
 
   useEffect(() => {
     async function loadUserData() {
@@ -49,30 +49,31 @@ export default function ChatConversationPage() {
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-red-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto"></div>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            Loading your messages...
+          <p className="mt-4 text-gray-600 dark:text-gray-400">
+            Loading your matches...
           </p>
         </div>
       </div>
     );
   }
+
   if (!otherUser) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-red-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-8">
-          <div className="w-30 h-30 bg-gradient-to-r from-red-300 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-6xl ">❌</span>
+          <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span className="text-4xl">❌</span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             User not found
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             The user you're looking for doesn't exist or you don't have
             permission to chat with them.
           </p>
           <button
             onClick={() => router.push("/chat")}
-            className="bg-gradient-to-r text-xl from-pink-500 to-red-500 text-white font-semibold py-4 px-12 rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-200"
+            className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold py-3 px-6 rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-200"
           >
             Back to Messages
           </button>

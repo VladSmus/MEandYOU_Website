@@ -11,12 +11,12 @@ export async function getStreamUserToken() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return { success: false, error: "User not authenticated." };
+    return { success: false, error: "User not authenticated" };
   }
 
   const { data: userData, error: userError } = await supabase
-    .from("user")
-    .select("full_name,avatar_url")
+    .from("users")
+    .select("full_name, avatar_url")
     .eq("id", user.id)
     .single();
 
@@ -41,7 +41,7 @@ export async function getStreamUserToken() {
   return {
     token,
     userId: user.id,
-    username: userData.full_name,
+    userName: userData.full_name,
     userImage: userData.avatar_url || undefined,
   };
 }
@@ -54,14 +54,14 @@ export async function createOrGetChannel(otherUserId: string) {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return { success: false, error: "User not authenticated." };
+    return { success: false, error: "User not authenticated" };
   }
 
- const { data: matches, error: matchError } = await supabase
+  const { data: matches, error: matchError } = await supabase
     .from("matches")
     .select("*")
     .or(
-      `and(user1_id.eq.${user.id},user2_id.eq.${otherUserId}),and(user1_id.eq.${otherUserId},user2_id.eq.${user.id})`
+      `and(user1_id.eq.${user.id},user2_id.eq.${otherUserId}),and(user1_id.eq.${otherUserId},user2_id.eq.${user.id})`,
     )
     .eq("is_active", true)
     .single();
@@ -77,7 +77,7 @@ export async function createOrGetChannel(otherUserId: string) {
   for (let i = 0; i < combinedIds.length; i++) {
     const char = combinedIds.charCodeAt(i);
     hash = (hash << 5) - hash + char;
-    hash = hash & hash; // <----- Convert to 32-bit integer
+    hash = hash & hash; // Convert to 32-bit integer
   }
 
   const channelId = `match_${Math.abs(hash).toString(36)}`;
@@ -95,7 +95,7 @@ export async function createOrGetChannel(otherUserId: string) {
 
   if (otherUserError) {
     console.error("Error fetching user data:", otherUserError);
-    throw new Error("Failed to fetch user data.");
+    throw new Error("Failed to fetch user data");
   }
 
   const channel = serverClient.channel("messaging", channelId, {
@@ -141,7 +141,7 @@ export async function createVideoCall(otherUserId: string) {
     .from("matches")
     .select("*")
     .or(
-      `and(user1_id.eq.${user.id},user2_id.eq.${otherUserId}),and(user1_id.eq.${otherUserId},user2_id.eq.${user.id})`
+      `and(user1_id.eq.${user.id},user2_id.eq.${otherUserId}),and(user1_id.eq.${otherUserId},user2_id.eq.${user.id})`,
     )
     .eq("is_active", true)
     .single();
@@ -157,7 +157,7 @@ export async function createVideoCall(otherUserId: string) {
   for (let i = 0; i < combinedIds.length; i++) {
     const char = combinedIds.charCodeAt(i);
     hash = (hash << 5) - hash + char;
-    hash = hash & hash; // <---- It's need to convert to 32-bit integer
+    hash = hash & hash; // Convert to 32-bit integer
   }
 
   const callId = `call_${Math.abs(hash).toString(36)}`;

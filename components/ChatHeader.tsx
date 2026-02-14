@@ -8,10 +8,8 @@ interface ChatHeaderProps {
   user: UserProfile;
   onVideoCall?: () => void;
 }
-
 export default function ChatHeader({ user, onVideoCall }: ChatHeaderProps) {
   const router = useRouter();
-
   return (
     <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
       <div className="flex items-center justify-between">
@@ -21,7 +19,7 @@ export default function ChatHeader({ user, onVideoCall }: ChatHeaderProps) {
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
           >
             <svg
-              className="w-12 h-12 text-gray-600 dark:text-gray-400"
+              className="w-6 h-6 text-gray-600 dark:text-gray-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -36,7 +34,7 @@ export default function ChatHeader({ user, onVideoCall }: ChatHeaderProps) {
           </button>
 
           <div className="flex items-center space-x-3">
-            <div className="relative w-16 h-16 rounded-full overflow-hidden">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden">
               <img
                 src={user.avatar_url || "/default-avatar.jpg"}
                 alt={user.full_name}
@@ -59,11 +57,11 @@ export default function ChatHeader({ user, onVideoCall }: ChatHeaderProps) {
         <div className="flex items-center space-x-2">
           <button
             onClick={onVideoCall}
-            className="p-3 rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl"
             title="Start Video Call"
           >
             <svg
-              className="w-8 h-8"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
