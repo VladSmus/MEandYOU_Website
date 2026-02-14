@@ -36,5 +36,63 @@ export default function StreamChatInterface({
 
     const [vidoeCallId, setVideoCallId] = useState<string>("");
     const [showVideoCall, setShowVideoCall] = useState<string>("");
-    const 
+    const [isCallInititor, setIsCallInitiator] = useState(false);
+
+    const [incomingCallId, setIncomingCallId] = useState<string>("");
+    const [callerName, setCallerName] = useState<string>("");
+    const [showIncomingCall, setIncomingCall] = useState(false);
+
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    const messagesContainerRef = useRef<HTMLDivElement>(null);
+
+    const router = useRouter();
+
+    function scrollToBottom() {
+        messagesEndRef.current?.scrollIntoView({behavior: "smooth"});
+        setShowScrollButton(false);
+    }
+
+    function handleScroll() {
+        if (messagesContainerRef.current) {
+            const { scrollTop, scrollHeight, clientHeight} = messagesContainerRef.current;
+            const isNearBottom = scrollHeight - scrollTop - clientHeight < 100;
+            setShowScrollButton(!isNearBottom);
+        }
+    }
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
+    useEffect(() => {
+        const container = messagesContainerRef.current;
+
+        if (container) {
+            container.addEventListener("scroll", handleScroll);
+            return () => container.removeEventListener("scroll", handleScroll);
+        }
+    }, [handleScroll]);
+
+    useEffect(() => {
+        setShowVideoCall(false);
+        setVideoCallId("");
+        setIncomingCall(false);
+        setIncomingCallId("");
+        setCallerName("");
+        setIsCallInitiator(false);
+
+
+        async function initializeChat(){
+            try {
+                setError(null);
+
+                const { token, userId, userName, userImage} =
+                await getStreamUserToken();
+                setCurrentUserId(userId!);
+
+                
+            } 
+        }
+    })
+
 }
