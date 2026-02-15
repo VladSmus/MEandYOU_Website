@@ -1,5 +1,25 @@
 FULLSTACK Dating website with NextJS, React and Supabase + Tailwind CSS TypeScript
 
+
+
+https://github.com/user-attachments/assets/49cfcc63-4b0f-4d88-8ab1-5c9d378c1a07
+
+
+
+
+
+
+https://github.com/user-attachments/assets/0e6747cf-e748-42ca-b519-a9ff0087ab62
+
+
+
+
+
+
+https://github.com/user-attachments/assets/61545666-3488-44e9-9ec1-85114c3bde84
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
