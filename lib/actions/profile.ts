@@ -24,6 +24,7 @@ export async function getCurrentUserProfile() {
     console.error("Error fetching profile:", error);
     return null;
   }
+
   return profile;
 }
 // ----------- Very often usage -----------------

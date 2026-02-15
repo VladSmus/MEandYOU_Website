@@ -13,7 +13,7 @@ export default function AuthPage() {
   const [error, setError] = useState<string>("");
   const supabase = createClient();
   const { user, loading: authLoading } = useAuth();
-  const router = useRouter(); // <--- redirect User to the page
+  const router = useRouter();
 
   useEffect(() => {
     if (user && !authLoading) {

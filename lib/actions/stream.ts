@@ -2,13 +2,13 @@
 
 import { StreamChat } from "stream-chat";
 import { createClient } from "../supabase/server";
-import axios from 'axios';
-axios.defaults.timeout = 5000
-
+import axios from "axios";
+axios.defaults.timeout = 100000;
 
 export async function getStreamUserToken() {
+  axios.defaults.timeout = 50000;
   const supabase = await createClient();
-
+  axios.defaults.timeout = 50000;
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -33,14 +33,14 @@ export async function getStreamUserToken() {
     process.env.STREAM_API_SECRET!,
   );
 
-  const token = serverClient.createToken(user.id);
+const token = serverClient.createToken(user.id);
 
   await serverClient.upsertUser({
     id: user.id,
     name: userData.full_name,
-    image: userData.avatar_url || undefined,
-  });
-
+    // image: userData.avatar_url || undefined,
+  }, );
+// { timeout: 5000 }
   return {
     token,
     userId: user.id,
@@ -109,14 +109,15 @@ export async function createOrGetChannel(otherUserId: string) {
   await serverClient.upsertUser({
     id: otherUserId,
     name: otherUserData.full_name,
-    image: otherUserData.avatar_url || undefined,
-  });
-
+    // image: otherUserData.avatar_url || undefined,
+  }, );
+// { timeout: 5000 }
   try {
+    axios.defaults.timeout = 50000;
     await channel.create();
+    axios.defaults.timeout = 50000;
     console.log("Channel created successfully:", channelId);
-  } 
-  catch (error) {
+  } catch (error) {
     console.log("Channel creation error:", error);
 
     if (error instanceof Error && !error.message.includes("already exists")) {

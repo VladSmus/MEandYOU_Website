@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { faker } from "@faker-js/faker";
-// import "dotenv/config";
+import "dotenv/config";
 
 // ----- Configuration -------
 const SUPABASE_URL = "https://bvnztdunkjtbbzjzlxrm.supabase.co";
